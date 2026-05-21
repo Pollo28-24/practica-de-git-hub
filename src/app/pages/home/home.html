@@ -1,21 +1,56 @@
-<section class="home-page">
-  <header>
-    <h1>Bienvenido a la Tiendita</h1>
-    <p>Explora nuestros productos y encuentra ofertas especiales en tecnología, moda y hogar.</p>
+<section class="home-page px-6 py-10 bg-slate-50 min-h-screen">
+  <header class="max-w-5xl mx-auto text-center mb-12">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4">Bienvenido a la Tiendita</h1>
+    <p class="text-lg sm:text-xl text-slate-600">Explora nuestros productos y encuentra ofertas especiales en tecnología, moda y hogar.</p>
   </header>
 
-  <div class="home-cards">
-    <article class="card">
-      <h2>Lo más nuevo</h2>
-      <p>Descubre las últimas novedades y productos exclusivos.</p>
+  <div class="grid gap-6 max-w-5xl mx-auto lg:grid-cols-3 mb-12">
+    <article class="card rounded-3xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-3">Lo más nuevo</h2>
+      <p class="text-slate-600">Descubre las últimas novedades y productos exclusivos que acaban de llegar a nuestra tienda.</p>
     </article>
-    <article class="card">
-      <h2>Ofertas</h2>
-      <p>Aprovecha descuentos especiales por tiempo limitado.</p>
+    <article class="card rounded-3xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-3">Ofertas</h2>
+      <p class="text-slate-600">Aprovecha descuentos especiales por tiempo limitado y encuentra precios únicos en tus marcas favoritas.</p>
     </article>
-    <article class="card">
-      <h2>Contacto</h2>
-      <p>Escríbenos si necesitas ayuda o tienes alguna consulta.</p>
+    <article class="card rounded-3xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-3">Contacto</h2>
+      <p class="text-slate-600">Escríbenos si necesitas ayuda o tienes alguna consulta. Estamos aquí para darte atención rápida y personalizada.</p>
     </article>
   </div>
+
+  <section class="max-w-5xl mx-auto grid gap-8 lg:grid-cols-2 items-center mb-12">
+    <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4">Productos destacados</h2>
+      <p class="text-slate-600 mb-6">Seleccionamos lo mejor para ti: tecnología, moda y artículos para el hogar con calidad garantizada.</p>
+      <ul class="space-y-4 text-slate-700">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+          <span>Electrónica con envío rápido y precios competitivos.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+          <span>Ropa y accesorios con diseños modernos y cómodos.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+          <span>Artículos para el hogar para mejorar tu espacio con estilo.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 text-white rounded-[2rem] p-8 shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">Regístrate para recibir novedades</h3>
+      <p class="text-slate-200 mb-6">No te pierdas nuevas colecciones, ofertas exclusivas y recomendaciones personalizadas.</p>
+      <form class="space-y-4">
+        <input type="email" placeholder="Tu correo electrónico" class="w-full rounded-2xl border border-slate-700 bg-slate-800/80 px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+        <button type="submit" class="w-full rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-slate-900 transition hover:bg-emerald-400">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="max-w-5xl mx-auto text-center text-slate-500 text-sm">
+    <p>Compra con confianza. Envíos rápidos y atención al cliente disponible.</p>
+    <p class="mt-2">Copyright © 2026 Tiendita</p>
+  </footer>
 </section>

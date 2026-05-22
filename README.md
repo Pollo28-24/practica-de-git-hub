@@ -1,59 +1,89 @@
-# Tiendita
+﻿# Tiendita
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+`Tiendita` es una aplicación web de ejemplo desarrollada con Angular 20, diseñada como una pequeña landing page comercial que muestra productos destacados, ofertas y una sección de contacto.
 
-## Development server
+## Descripción del proyecto
 
-To start a local development server, run:
+Esta aplicación contiene una página principal (`/home`) con una presentación visual moderna y tarjetas informativas para una tienda virtual ficticia. El proyecto usa:
 
-```bash
-ng serve
-```
+- Angular 20
+- Router de Angular para la navegación
+- Tailwind CSS para estilos globales
+- Arquitectura de componentes simple con página `Home`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Características principales
 
-## Code scaffolding
+- Página de inicio con hero y productos destacados
+- Navegación básica mediante ruta única `/home`
+- Estilos y animaciones para una experiencia visual atractiva
+- Base lista para extender a un sitio de ecommerce o catálogo de productos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estructura del proyecto
 
-```bash
-ng generate component component-name
-```
+- `src/main.ts`: punto de entrada de la aplicación
+- `src/app/app.ts`: componente raíz de Angular
+- `src/app/app.routes.ts`: rutas configuradas de la app
+- `src/app/app.config.ts`: configuración de Angular con router y detección de cambios
+- `src/app/pages/home/`: componente y plantilla de la página de inicio
+- `src/styles.css`: estilos globales y carga de Tailwind CSS
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Requisitos previos
 
-```bash
-ng generate --help
-```
+- Node.js 18+ o superior
+- npm 10+ o superior
 
-## Building
+## Instalación
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Desde la raíz del proyecto, ejecuta:
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
+## Ejecución en desarrollo
 
-For end-to-end (e2e) testing, run:
+Inicia el servidor de desarrollo con:
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Luego abre en el navegador:
 
-## Additional Resources
+```text
+http://localhost:4200/
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+La aplicación recargará automáticamente los cambios.
+
+## Comandos útiles
+
+- `npm start` — ejecuta `ng serve` y levanta el servidor de desarrollo
+- `npm run build` — compila la aplicación para producción en `dist/`
+- `npm test` — ejecuta los tests unitarios configurados con Karma
+
+## Rutas disponibles
+
+- `/home` — página principal de la tienda
+- `/` — redirige automáticamente a `/home`
+
+## Personalización
+
+Puedes ampliar esta plantilla añadiendo:
+
+- nuevos componentes para catálogo y detalle de productos
+- servicios para consumir datos desde una API
+- autenticación de usuarios y gestión de sesión
+- carrito de compras y filtros por categoría
+
+## Notas
+
+- El proyecto está orientado a ser una demostración visual y de estructura básica.
+- Actualmente no hay pruebas e2e preconfiguradas.
+- La página `Home` contiene estilos integrados y animaciones en su propia plantilla.
+
+## Recursos
+
+- Angular: https://angular.io/
+- Angular CLI: https://angular.io/cli
+- Tailwind CSS: https://tailwindcss.com/

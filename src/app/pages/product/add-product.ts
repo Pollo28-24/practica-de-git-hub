@@ -1,37 +1,26 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductService, ProductItem } from './product.service';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-add-product',
   imports: [CommonModule, FormsModule],
-  templateUrl: './product.html',
-  styleUrl: './product.css',
+  templateUrl: './add-product.html',
+  styleUrl: './add-product.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Product {
-  products$ = this.productService.products$;
-
-  isModalOpen = false;
+export class AddProduct {
   newProduct: Partial<ProductItem> = {
     name: '',
     price: 0,
     stock: 0,
   };
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
-  openModal(): void {
-    this.isModalOpen = true;
-  }
-
-  closeModal(): void {
-    this.isModalOpen = false;
-    this.resetForm();
-  }
-
-  addProduct(event: Event): void {
+  saveProduct(event: Event): void {
     event.preventDefault();
 
     const name = this.newProduct.name?.trim() ?? '';
@@ -43,14 +32,10 @@ export class Product {
     }
 
     this.productService.addProduct({ name, price, stock });
-    this.closeModal();
+    this.router.navigate(['/product']);
   }
 
-  resetForm(): void {
-    this.newProduct = {
-      name: '',
-      price: 0,
-      stock: 0,
-    };
+  cancel(): void {
+    this.router.navigate(['/product']);
   }
 }

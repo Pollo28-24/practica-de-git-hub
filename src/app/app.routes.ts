@@ -3,16 +3,16 @@ import { Home } from './pages/home/home';
 import { Product } from './pages/product/product';
 
 export const routes: Routes = [
-
     {
         path: 'home',
         component: Home,
     },
     {
       path: 'product',
-      component: Product
+      component: Product,
+      pathMatch: 'full',
     },
-     {
+    {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'

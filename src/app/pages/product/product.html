@@ -1,5 +1,5 @@
 <div class="product-page">
-  <button type="button" class="add-button" (click)="onAddProduct()">A�adir producto</button>
+  <button type="button" class="add-button" (click)="openModal()">Añadir producto</button>
 
   <table class="product-table">
     <thead>
@@ -10,21 +10,64 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Camisa</td>
-        <td>$35</td>
-        <td>12</td>
-      </tr>
-      <tr>
-        <td>Zapatillas</td>
-        <td>$60</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>Gorra</td>
-        <td>$18</td>
-        <td>20</td>
+      <tr *ngFor="let item of products$ | async">
+        <td>{{ item.name }}</td>
+        <td>$ {{ item.price }}</td>
+        <td>{{ item.stock }}</td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="modal-backdrop" [class.show]="isModalOpen">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <h2>Agregar producto</h2>
+      <button type="button" class="close-button" (click)="closeModal()">×</button>
+    </div>
+
+    <form class="modal-form" (submit)="addProduct($event)">
+      <label>
+        Nombre
+        <input
+          type="text"
+          [(ngModel)]="newProduct.name"
+          name="productName"
+          placeholder="Nombre del producto"
+          required
+        />
+      </label>
+
+      <label>
+        Precio
+        <input
+          type="number"
+          [(ngModel)]="newProduct.price"
+          name="productPrice"
+          min="0"
+          step="0.01"
+          placeholder="0.00"
+          required
+        />
+      </label>
+
+      <label>
+        Stock
+        <input
+          type="number"
+          [(ngModel)]="newProduct.stock"
+          name="productStock"
+          min="0"
+          step="1"
+          placeholder="0"
+          required
+        />
+      </label>
+
+      <div class="modal-actions">
+        <button type="button" class="secondary-button" (click)="closeModal()">Cancelar</button>
+        <button type="submit" class="primary-button">Guardar producto</button>
+      </div>
+    </form>
+  </div>
 </div>

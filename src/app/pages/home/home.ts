@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Navbar } from '../navbar/navbar';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Navbar],
   templateUrl: './home.html',
   styles: `
     :host {

@@ -11,7 +11,9 @@ import { ProductService, ProductItem } from './product.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Product {
-  products$ = this.productService.products$;
+  get products$() {
+    return this.productService.products$;
+  }
 
   isModalOpen = false;
   newProduct: Partial<ProductItem> = {
